@@ -1,0 +1,46 @@
+.header-controls {
+  background-color: #edeeee;
+}
+.flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.controls-group {
+  display: flex;
+  gap: 15px;
+}
+.controls-btn {
+  background-color: #edeeee;
+  color: #aaabab;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.controls-btn:hover {
+  background-color: #dce7f8;
+  cursor: pointer;
+}
+.controls-btn.selected {
+  background-color: #dce7f8;
+  color: #5d8fdc;
+}
+
+.cta-btn {
+  background-color: #57ab68;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 25px;
+  transition: 230ms all;
+}
+.cta-btn:hover {
+  background-color: #57ab68c7;
+  cursor: pointer;
+}
