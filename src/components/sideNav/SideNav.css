@@ -1,0 +1,22 @@
+.side-nav {
+  height: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.nav-item {
+  font-size: 22px;
+  font-weight: bold;
+  color: #aaabab;
+}
+.nav-item:hover,
+.selected {
+  color: #5d8fdc;
+}

@@ -1,0 +1,5 @@
+.body-layout {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 70% 25% 5%;
+}
