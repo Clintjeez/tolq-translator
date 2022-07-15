@@ -14,13 +14,13 @@
 .controls-btn {
   background-color: #edeeee;
   color: #aaabab;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
   display: flex;
   align-items: center;
   border: none;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 5px 15px;
 }
 .controls-btn:hover {
   background-color: #dce7f8;
