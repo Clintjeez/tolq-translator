@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import Brand from "../brand/Brand";
 import ProgressBar from "../progressBar/ProgressBar";
+import { getWordCount } from "../../utils/wordsCounter";
 
 import "./Header.css";
 
-const Header = () => {
-  const [progressRate, setProgressRate] = useState(60);
+const Header = ({ active, translateText = [] }) => {
+  const [progressRate, setProgressRate] = useState(0);
+
+  React.useEffect(() => {
+    setProgressRate(getWordCount(translateText[active?.id]));
+  }, [translateText]);
 
   return (
     <div className="header container">
@@ -16,7 +21,10 @@ const Header = () => {
       </div>
       <div className="progress-bar-wrapper">
         <p>Progress bar</p>
-        <ProgressBar bgcolor={"#68c97a"} completed={progressRate} />
+        <ProgressBar
+          bgcolor={progressRate >= 100 ? "#ff0000" : "#68c97a"}
+          completed={progressRate}
+        />
       </div>
     </div>
   );

@@ -11,22 +11,12 @@ const TranslatorEngine = ({
   inputName,
   active,
 }) => {
-  const [activeCheck, setActiveCheck] = React.useState(0);
-
-  React.useEffect(() => {
-    setActiveCheck(active);
-  }, []);
-
-  console.log("ActiveChecker", activeCheck);
-
   return (
     <div className="translator-engine">
       <p>{`Key-${id}`}</p>
       <div
         className={
-          activeCheck === active
-            ? "translator-wrapper active"
-            : "translator-wrapper"
+          id === active.id ? "translator-wrapper active" : "translator-wrapper"
         }
         onClick={onSelected}
       >

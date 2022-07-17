@@ -7,8 +7,13 @@ import "./TranslatorView.css";
 
 let pageSize = 10;
 
-const TranslatorView = ({ setPostId, setActive, active }) => {
-  const [translateText, setTranslateText] = React.useState({});
+const TranslatorView = ({
+  setPostId,
+  setActive,
+  active,
+  translateText,
+  setTranslateText,
+}) => {
   const [currentPage, setCurrentPage] = React.useState(1);
   const {
     data: dataSource,
@@ -26,9 +31,9 @@ const TranslatorView = ({ setPostId, setActive, active }) => {
   };
 
   const handleSelected = (id) => {
-    setPostId(id);
+    setPostId(id.id);
     setActive(id);
-    console.log("clicked");
+    console.log("ID::::", id);
   };
 
   //Pagination handler
@@ -55,11 +60,10 @@ const TranslatorView = ({ setPostId, setActive, active }) => {
             key={idx}
             id={translatData.id}
             translatorSource={translatData.body}
-            onSelected={() => handleSelected(translatData.id)}
+            onSelected={() => handleSelected(translatData)}
             onInputChange={handleChange}
             inputValue={translateText.inputName}
             inputName={translatData.id}
-            onClick={() => handleSelected(translatData.id)}
             active={active}
           />
         );

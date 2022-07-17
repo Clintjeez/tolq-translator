@@ -61,3 +61,7 @@ section {
   width: 97%;
   margin: 5px auto;
 }
+
+body {
+  overflow: hidden;
+}

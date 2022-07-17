@@ -18,15 +18,18 @@ const ProgressBar = ({ bgcolor, completed }) => {
   };
 
   const labelStyles = {
-    padding: 4,
+    padding: 2,
     color: "#000",
-    fontSize: 15,
+    fontSize: 10,
+    width: "100%",
   };
 
   return (
     <div style={containerStyles}>
       <div style={fillerStyles}>
-        <span style={labelStyles}>{`${completed}%`}</span>
+        <div style={labelStyles}>
+          {completed >= 25 ? completed + " words" : completed}
+        </div>
       </div>
     </div>
   );
