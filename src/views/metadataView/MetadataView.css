@@ -41,9 +41,14 @@
 
 .metadata-list {
   height: 100%;
+}
+
+.metadata-list-wrapper {
+  max-height: calc(100% - 50%);
   margin-top: 20px;
+  padding-bottom: 120px;
   overflow-y: scroll;
 }
-.metadata-list::-webkit-scrollbar {
+.metadata-list-wrapper::-webkit-scrollbar {
   display: none;
 }

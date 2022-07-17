@@ -2,6 +2,7 @@ import React from "react";
 import { BsFlag } from "react-icons/bs";
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { useGetCommentsQuery } from "../../api/apiSlice";
+import { generateRandomColor } from "../../utils/randomColorGenerator";
 
 import MetaDataItem from "../../components/metaDataItem/MetaDataItem";
 
@@ -15,15 +16,6 @@ const MetadataView = ({ postId }) => {
     isError,
     error,
   } = useGetCommentsQuery(postId);
-
-  function generateRandomColor() {
-    let maxVal = 0xffffff; // 16777215
-    let randomNumber = Math.random() * maxVal;
-    randomNumber = Math.floor(randomNumber);
-    randomNumber = randomNumber.toString(16);
-    let randColor = randomNumber.padStart(6, 0);
-    return `#${randColor.toUpperCase()}`;
-  }
 
   let metaDataContent;
   if (isLoading) {
@@ -73,8 +65,10 @@ const MetadataView = ({ postId }) => {
           overlapping each other
         </p>
       </div>
-      <div className="metadata-list">
-        {postId === null ? <div>No data selected</div> : metaDataContent}
+      <div className="metadata-list-wrapper">
+        <div className="metadata-list">
+          {postId === null ? <div>No data selected</div> : metaDataContent}
+        </div>
       </div>
     </div>
   );

@@ -23,9 +23,6 @@ const TranslatorView = ({
     error,
   } = useGetPostsQuery();
 
-  console.log("translateText:::", translateText);
-  console.log("Active", active);
-
   const handleChange = (e) => {
     setTranslateText({ ...translateText, [e.target.name]: e.target.value });
   };
@@ -33,7 +30,6 @@ const TranslatorView = ({
   const handleSelected = (id) => {
     setPostId(id.id);
     setActive(id);
-    console.log("ID::::", id);
   };
 
   //Pagination handler
