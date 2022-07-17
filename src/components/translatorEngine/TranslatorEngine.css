@@ -1,0 +1,41 @@
+.translator-engine {
+  margin-top: 20px;
+}
+
+.translator-wrapper {
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+  min-height: 35px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.translator-wrapper:hover {
+  outline: solid 1px #5d8fdc;
+}
+
+.translator-source {
+  max-width: 100%;
+  width: 100%;
+
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.translator-input {
+  max-width: 100%;
+  width: 100%;
+  border: none;
+  border-left: 1px solid #c0c0c0;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  outline: none;
+}
+
+.translator-input:hover {
+  outline-color: #5d8fdc;
+}

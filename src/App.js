@@ -1,3 +1,4 @@
+import React from "react";
 // Parents layouts
 import MainLayout from "./layouts/mainLayout/MainLayout";
 import HeaderLaout from "./layouts/headerLayout/HeaderLayout";
@@ -15,6 +16,7 @@ import MetadataView from "./views/metadataView/MetadataView";
 import "./styles/reset.css";
 
 function App() {
+  const [postId, setPostId] = React.useState(null);
   return (
     <MainLayout>
       <HeaderLaout>
@@ -22,8 +24,8 @@ function App() {
         <HeaderControls />
       </HeaderLaout>
       <BodyLayout>
-        <TranslatorView />
-        <MetadataView />
+        <TranslatorView setPostId={setPostId} />
+        <MetadataView postId={postId} />
         <SideNav />
       </BodyLayout>
     </MainLayout>

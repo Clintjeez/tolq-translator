@@ -1,0 +1,48 @@
+.metadata-view {
+  padding: 20px 10px;
+  color: #727272;
+}
+.view-title {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border-bottom: 2px solid #cecece8a;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.view-title h2 {
+  margin-left: 7px;
+}
+
+.quality-lable {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+.quality-lable .icon {
+  color: #72727281;
+}
+.metadata-note h3 {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 120%;
+  margin-bottom: 15px;
+}
+.metadata-note p {
+  font-size: 12px;
+  opacity: 0.5;
+  line-height: 120%;
+}
+
+.metadata-list {
+  height: 100%;
+  margin-top: 20px;
+  overflow-y: scroll;
+}
+.metadata-list::-webkit-scrollbar {
+  display: none;
+}
