@@ -7,7 +7,8 @@ import "./TranslatorView.css";
 
 let pageSize = 10;
 
-const TranslatorView = ({ setPostId }) => {
+const TranslatorView = ({ setPostId, setActive, active }) => {
+  const [translateText, setTranslateText] = React.useState({});
   const [currentPage, setCurrentPage] = React.useState(1);
   const {
     data: dataSource,
@@ -16,6 +17,19 @@ const TranslatorView = ({ setPostId }) => {
     isError,
     error,
   } = useGetPostsQuery();
+
+  console.log("translateText:::", translateText);
+  console.log("Active", active);
+
+  const handleChange = (e) => {
+    setTranslateText({ ...translateText, [e.target.name]: e.target.value });
+  };
+
+  const handleSelected = (id) => {
+    setPostId(id);
+    setActive(id);
+    console.log("clicked");
+  };
 
   //Pagination handler
   const currentTableData = React.useMemo(() => {
@@ -41,7 +55,12 @@ const TranslatorView = ({ setPostId }) => {
             key={idx}
             id={translatData.id}
             translatorSource={translatData.body}
-            onInputSelect={() => setPostId(translatData.id)}
+            onSelected={() => handleSelected(translatData.id)}
+            onInputChange={handleChange}
+            inputValue={translateText.inputName}
+            inputName={translatData.id}
+            onClick={() => handleSelected(translatData.id)}
+            active={active}
           />
         );
       });
@@ -50,14 +69,15 @@ const TranslatorView = ({ setPostId }) => {
     <div className="translator-view container">
       <h2 className="title-txt">markdown1.md</h2>
       <div className="tranlator-content">{translateContent}</div>
-
-      <Paginator
-        className="pagination-bar"
-        currentPage={currentPage}
-        totalCount={dataSource && dataSource?.length}
-        pageSize={pageSize}
-        onPageChange={(page) => setCurrentPage(page)}
-      />
+      <div className="paginator-wrapper">
+        <Paginator
+          className="paginator-bar"
+          currentPage={currentPage}
+          totalCount={dataSource && dataSource?.length}
+          pageSize={pageSize}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
+      </div>
     </div>
   );
 };

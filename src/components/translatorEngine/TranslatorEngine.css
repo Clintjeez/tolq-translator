@@ -1,13 +1,15 @@
 .translator-engine {
   margin-top: 20px;
+  color: #727272;
 }
 
 .translator-wrapper {
-  border: 1px solid #c0c0c0;
+  border: 1px solid #cacaca50;
   border-radius: 2px;
   min-height: 35px;
   display: flex;
   margin-top: 10px;
+  margin-right: 20px;
 }
 
 .translator-wrapper:hover {
@@ -28,7 +30,7 @@
   max-width: 100%;
   width: 100%;
   border: none;
-  border-left: 1px solid #c0c0c0;
+  border-left: 1px solid #cacaca50;
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -38,4 +40,8 @@
 
 .translator-input:hover {
   outline-color: #5d8fdc;
+}
+
+.active {
+  border: 1px solid #5d8fdc;
 }

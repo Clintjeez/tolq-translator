@@ -1,8 +1,35 @@
 .translator-view {
+  max-height: 100%;
   padding-top: 20px;
+  padding-bottom: 80px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+.translator-view::-webkit-scrollbar {
+  height: 100%;
+  width: 12px;
+}
+
+.translator-view::-webkit-scrollbar-track {
+  background: #fff;
+  border: 1px solid #c7c7c7a2;
+  border-radius: 20px;
+}
+
+.translator-view::-webkit-scrollbar-thumb {
+  background-color: rgb(197, 197, 197);
+  border-radius: 20px;
+  border: 2px solid #fff;
 }
 
 .title-txt {
   font: size 45px;
   font-weight: 500;
+}
+
+.paginator-wrapper {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
 }

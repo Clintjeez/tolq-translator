@@ -17,6 +17,7 @@ import "./styles/reset.css";
 
 function App() {
   const [postId, setPostId] = React.useState(null);
+  const [active, setActive] = React.useState(0);
   return (
     <MainLayout>
       <HeaderLaout>
@@ -24,7 +25,11 @@ function App() {
         <HeaderControls />
       </HeaderLaout>
       <BodyLayout>
-        <TranslatorView setPostId={setPostId} />
+        <TranslatorView
+          setPostId={setPostId}
+          setActive={setActive}
+          active={active}
+        />
         <MetadataView postId={postId} />
         <SideNav />
       </BodyLayout>
