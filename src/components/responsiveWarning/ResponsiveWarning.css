@@ -1,0 +1,16 @@
+.responsive-warning {
+  display: none;
+  height: 100vh;
+  font-size: 30px;
+  letter-spacing: 3px;
+  text-align: center;
+  line-height: 130%;
+}
+
+@media (max-width: 800px) {
+  .responsive-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -12,6 +12,7 @@ import SideNav from "./components/sideNav/SideNav";
 //Views
 import TranslatorView from "./views/translatorView/TranslatorView";
 import MetadataView from "./views/metadataView/MetadataView";
+import ResponsiveWarning from "./components/responsiveWarning/ResponsiveWarning";
 
 import "./styles/reset.css";
 
@@ -20,23 +21,26 @@ function App() {
   const [active, setActive] = React.useState(0);
   const [translateText, setTranslateText] = React.useState({});
   return (
-    <MainLayout>
-      <HeaderLaout>
-        <Header active={active} translateText={translateText} />
-        <HeaderControls />
-      </HeaderLaout>
-      <BodyLayout>
-        <TranslatorView
-          setPostId={setPostId}
-          setActive={setActive}
-          active={active}
-          translateText={translateText}
-          setTranslateText={setTranslateText}
-        />
-        <MetadataView postId={postId} />
-        <SideNav />
-      </BodyLayout>
-    </MainLayout>
+    <>
+      <MainLayout>
+        <HeaderLaout>
+          <Header active={active} translateText={translateText} />
+          <HeaderControls />
+        </HeaderLaout>
+        <BodyLayout>
+          <TranslatorView
+            setPostId={setPostId}
+            setActive={setActive}
+            active={active}
+            translateText={translateText}
+            setTranslateText={setTranslateText}
+          />
+          <MetadataView postId={postId} />
+          <SideNav />
+        </BodyLayout>
+      </MainLayout>
+      <ResponsiveWarning />
+    </>
   );
 }
 

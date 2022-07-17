@@ -61,6 +61,7 @@ const Paginator = (props) => {
           // Render our Page Pills
           return (
             <li
+              key={idx}
               className={classnames("pagination-item", {
                 selected: pageNumber === currentPage,
               })}
