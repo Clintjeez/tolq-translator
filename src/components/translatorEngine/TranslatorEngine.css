@@ -38,6 +38,10 @@
   outline: none;
 }
 
+.translator-input::placeholder {
+  color: #9e9e9e5b;
+}
+
 .translator-input:hover {
   outline-color: #5d8fdc;
 }

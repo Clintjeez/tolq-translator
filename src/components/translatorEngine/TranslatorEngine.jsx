@@ -28,6 +28,7 @@ const TranslatorEngine = ({
           onChange={onInputChange}
           value={inputValue}
           name={inputName}
+          placeholder="Enter your text here"
         />
       </div>
     </div>
