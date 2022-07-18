@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import "./TranslatorEngine.css";
 
@@ -9,14 +10,15 @@ const TranslatorEngine = ({
   onInputChange,
   inputValue,
   inputName,
-  active,
 }) => {
+  const post = useSelector((state) => state.selectedPost.post);
+
   return (
     <div className="translator-engine">
       <p>{`Key-${id}`}</p>
       <div
         className={
-          id === active.id ? "translator-wrapper active" : "translator-wrapper"
+          id === post?.id ? "translator-wrapper active" : "translator-wrapper"
         }
         onClick={onSelected}
       >

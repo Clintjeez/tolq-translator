@@ -1,15 +1,20 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import Brand from "../brand/Brand";
 import ProgressBar from "../progressBar/ProgressBar";
 import { getWordCount } from "../../utils/wordsCounter";
 
 import "./Header.css";
 
-const Header = ({ active, translateText = [] }) => {
+const Header = () => {
+  const post = useSelector((state) => state.selectedPost.post);
+  const translateText = useSelector(
+    (state) => state.translatorInput.translateText
+  );
   const [progressRate, setProgressRate] = useState(0);
 
   React.useEffect(() => {
-    setProgressRate(getWordCount(translateText[active?.id]));
+    setProgressRate(getWordCount(translateText[post?.id]));
   }, [translateText]);
 
   return (

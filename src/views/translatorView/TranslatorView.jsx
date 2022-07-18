@@ -1,20 +1,20 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useGetPostsQuery } from "../../api/apiSlice";
 import TranslatorEngine from "../../components/translatorEngine/TranslatorEngine";
 import Paginator from "../../components/paginator/Paginator";
+import { setPost } from "../../store/features/postSlice";
+import { setTranslatorText } from "../../store/features/translatorSlice";
 
 import "./TranslatorView.css";
 
 let pageSize = 10;
 
-const TranslatorView = ({
-  setPostId,
-  setActive,
-  active,
-  translateText,
-  setTranslateText,
-}) => {
+const TranslatorView = () => {
   const [currentPage, setCurrentPage] = React.useState(1);
+  const [translateText, setTranslateText] = React.useState({});
+
+  const dispatch = useDispatch();
   const {
     data: dataSource,
     isLoading,
@@ -28,9 +28,12 @@ const TranslatorView = ({
   };
 
   const handleSelected = (id) => {
-    setPostId(id.id);
-    setActive(id);
+    dispatch(setPost(id));
   };
+
+  React.useEffect(() => {
+    dispatch(setTranslatorText(translateText));
+  }, [translateText]);
 
   //Pagination handler
   const currentTableData = React.useMemo(() => {
@@ -60,7 +63,6 @@ const TranslatorView = ({
             onInputChange={handleChange}
             inputValue={translateText.inputName}
             inputName={translatData.id}
-            active={active}
           />
         );
       });

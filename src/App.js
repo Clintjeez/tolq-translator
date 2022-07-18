@@ -17,25 +17,16 @@ import ResponsiveWarning from "./components/responsiveWarning/ResponsiveWarning"
 import "./styles/reset.css";
 
 function App() {
-  const [postId, setPostId] = React.useState(null);
-  const [active, setActive] = React.useState(0);
-  const [translateText, setTranslateText] = React.useState({});
   return (
     <>
       <MainLayout>
         <HeaderLaout>
-          <Header active={active} translateText={translateText} />
+          <Header />
           <HeaderControls />
         </HeaderLaout>
         <BodyLayout>
-          <TranslatorView
-            setPostId={setPostId}
-            setActive={setActive}
-            active={active}
-            translateText={translateText}
-            setTranslateText={setTranslateText}
-          />
-          <MetadataView postId={postId} />
+          <TranslatorView />
+          <MetadataView />
           <SideNav />
         </BodyLayout>
       </MainLayout>

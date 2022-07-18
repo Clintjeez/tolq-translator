@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { BsFlag } from "react-icons/bs";
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { useGetCommentsQuery } from "../../api/apiSlice";
@@ -8,14 +9,16 @@ import MetaDataItem from "../../components/metaDataItem/MetaDataItem";
 
 import "./MetadataView.css";
 
-const MetadataView = ({ postId }) => {
+const MetadataView = () => {
+  const post = useSelector((state) => state.selectedPost.post);
+
   const {
     data: metaData,
     isLoading,
     isSuccess,
     isError,
     error,
-  } = useGetCommentsQuery(postId);
+  } = useGetCommentsQuery(post?.id);
 
   let metaDataContent;
   if (isLoading) {
@@ -67,7 +70,7 @@ const MetadataView = ({ postId }) => {
       </div>
       <div className="metadata-list-wrapper">
         <div className="metadata-list">
-          {postId === null ? <div>No data selected</div> : metaDataContent}
+          {post.length <= 0 ? <div>No data selected</div> : metaDataContent}
         </div>
       </div>
     </div>
